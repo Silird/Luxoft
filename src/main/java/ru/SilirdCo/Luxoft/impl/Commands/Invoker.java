@@ -1,13 +1,16 @@
 package ru.SilirdCo.Luxoft.impl.Commands;
 
-public class Invoker {
-    private Commands commands;
+import ru.SilirdCo.Luxoft.impl.Commands.Commands.CreateNewUserCommand;
+import ru.SilirdCo.Luxoft.interfaces.Commands.ICommand;
 
-    public void setCommands(Commands commands) {
-        this.commands = commands;
+public class Invoker {
+    private ICommand command;
+
+    public void setCommand(ICommand command) {
+        this.command = command;
     }
 
     public void run() {
-        commands.execute();
+        command.execute();
     }
 }

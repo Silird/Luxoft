@@ -20,7 +20,7 @@ public class MainJavaFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/frames/MainFrame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frames/MainFrame.fxml"));
         mainFrameController = new MainFrameController();
         loader.setController(mainFrameController);
 

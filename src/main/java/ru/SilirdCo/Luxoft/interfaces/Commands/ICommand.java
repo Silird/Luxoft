@@ -1,5 +1,5 @@
 package ru.SilirdCo.Luxoft.interfaces.Commands;
 
-public interface ICommands {
+public interface ICommand {
     void execute();
 }

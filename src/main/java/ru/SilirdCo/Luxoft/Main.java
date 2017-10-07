@@ -1,8 +1,6 @@
 package ru.SilirdCo.Luxoft;
 
-import ru.SilirdCo.Luxoft.impl.Commands.Commands;
-import ru.SilirdCo.Luxoft.impl.Commands.Invoker;
-import ru.SilirdCo.Luxoft.impl.Commands.Receiver;
+import ru.SilirdCo.Luxoft.impl.Commands.CommandService;
 import ru.SilirdCo.Luxoft.impl.Frames.MainJavaFX;
 
 /**
@@ -11,6 +9,8 @@ import ru.SilirdCo.Luxoft.impl.Frames.MainJavaFX;
 public class Main {
     public static void main(String[] args) {
         //System.out.println("Hello, World!");
+        new CommandService();
+
         MainJavaFX.show(args);
     }
 }
