@@ -10,6 +10,7 @@ public class Network {
     private final static Logger logger = LoggerFactory.getLogger(Network.class);
 
     private List<User> users = new ArrayList<>();
+    private List<Message> messages = new ArrayList<>();
 
     public List<User> getUsers() {
         if (users == null) {
@@ -23,5 +24,19 @@ public class Network {
             users = new ArrayList<>();
         }
         users.add(user);
+    }
+
+    public List<Message> getMessages() {
+        if (messages == null) {
+            messages = new ArrayList<>();
+        }
+        return messages;
+    }
+
+    public void addUser(Message message) {
+        if (messages == null) {
+            messages = new ArrayList<>();
+        }
+        messages.add(message);
     }
 }
