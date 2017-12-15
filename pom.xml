@@ -1,119 +1,164 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SilirdCo</groupId>
+    <groupId>ru.SilirdCo</groupId>
     <artifactId>Luxoft</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <packaging>pom</packaging>
+
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.1</version>
-                <executions>
-                    <execution>
-                        <phase>
-                            package
-                        </phase>
-                        <goals>
-                            <goal>
-                                shade
-                            </goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>ru.SilirdCo.Luxoft.Main</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-            </resource>
-        </resources>
+        <defaultGoal>clean install</defaultGoal>
     </build>
 
-    <dependencies>
-        <!-- Spring для подлючения статических ресурсов -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>4.3.2.RELEASE</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+    <modules>
+        <module>luxoft-codegen-maven-plugin</module>
+        <module>LuxoftSocialNetWork</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring для подлючения статических ресурсов -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>4.3.2.RELEASE</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- GSON для сериализации -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.7</version>
+            </dependency>
+
+            <!-- RxJava API для ассинхронного общения внутри программы -->
+            <dependency>
+                <groupId>io.reactivex</groupId>
+                <artifactId>rxjava</artifactId>
+                <version>1.2.0</version>
+            </dependency>
+
+            <!-- ============================= Логи ============================= -->
+            <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>1.1.7</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.1.7</version>
+            </dependency>
+
+            <!-- API для универсализации логов -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.21</version>
+            </dependency>
+
+            <!-- Bridge logging kindFrom jcl to slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>1.7.21</version>
+            </dependency>
+
+            <!-- Bridge logging kindFrom log4j to slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>1.7.21</version>
+            </dependency>
+
+            <!-- ============================= Логи ============================= -->
+
+            <!-- ============================= Core ============================= -->
+
+            <!-- драйвер для postgresql -->
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>9.1-901.jdbc4</version>
+            </dependency>
+
+            <!-- Отчёты на джаспере -->
+            <!--
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports</artifactId>
+                <version>6.0.0</version>
+            </dependency>
+            -->
+
+            <!-- API для работы с бд -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>5.2.2.Final</version>
+            </dependency>
+
+            <!-- connection pool для работы с бд -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-c3p0</artifactId>
+                <version>5.2.2.Final</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.5</version>
+            </dependency>
 
 
-        <!-- RxJava API для ассинхронного общения внутри программы -->
-        <dependency>
-            <groupId>io.reactivex</groupId>
-            <artifactId>rxjava</artifactId>
-            <version>1.2.0</version>
-        </dependency>
+            <!-- ============================= Core ============================= -->
 
-        <!-- https://mvnrepository.com/artifact/org.json/json -->
-        <!-- Сериализация и десериализация-->
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20171018</version>
-        </dependency>
+            <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>6.10</version>
+            </dependency>
 
+            <!-- ============================= maven-plugin ============================= -->
 
-        <!-- ============================= Логи ============================= -->
-        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.1.7</version>
-        </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugin-tools/maven-plugin-annotations -->
+            <dependency>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-annotations</artifactId>
+                <version>3.5</version>
+            </dependency>
 
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.1.7</version>
-        </dependency>
-
-        <!-- API для универсализации логов -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
-        </dependency>
-
-        <!-- Bridge logging kindFrom jcl to slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.7.21</version>
-        </dependency>
-    </dependencies>
+            <!-- https://mvnrepository.com/artifact/org.apache.maven/maven-plugin-api -->
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>3.3.9</version>
+            </dependency>
 
 
+            <dependency>
+                <groupId>ru.SilirdCo</groupId>
+                <artifactId>luxoft-codegen-maven-plugin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
