@@ -4,13 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationConfiguration;
 import ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationMapping;
-import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Infrastructure.Attribute.GenerationAttribute;
-import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Server.DAO.GenerationDAO;
-import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Server.Entity.GenerationEntity;
-import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Server.Util.Factory.DAO.GenerationDAOFactory;
-import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Server.Util.Factory.DAO.GenerationDAOFactoryXML;
-import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Server.Util.Factory.Service.GenerationServiceFactory;
-import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Server.Util.Factory.Service.GenerationServiceFactoryXML;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Attribute.GenerationAttribute;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.DAO.GenerationDAO;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Entity.GenerationEntity;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Services.GenerationServiceSkeleton;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Util.Factory.DAO.GenerationDAOFactory;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Util.Factory.DAO.GenerationDAOFactoryXML;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Util.Factory.Service.GenerationServiceFactory;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Generators.Util.Factory.Service.GenerationServiceFactoryXML;
 import ru.SilirdCo.Luxoft.CodeGen.Generation.Util.SpringFactory;
 
 public class Generation {
@@ -28,6 +29,8 @@ public class Generation {
         GenerationEntity entity = new GenerationEntity();
         GenerationAttribute attribute = new GenerationAttribute();
         GenerationDAO dao = new GenerationDAO();
+
+        GenerationServiceSkeleton serviceSkeleton = new GenerationServiceSkeleton();
 
 
         GenerationDAOFactoryXML daoFactoryXML = new GenerationDAOFactoryXML();
@@ -69,6 +72,11 @@ public class Generation {
 
             if (!dao.start(mapping)) {
                 logger.error("Ошибка генерации дао для таблицы: " + tableName);
+                return false;
+            }
+
+            if (!serviceSkeleton.start(mapping)) {
+                logger.error("Ошибка генерации базовой реализации сервиса для таблицы: " + tableName);
                 return false;
             }
         }

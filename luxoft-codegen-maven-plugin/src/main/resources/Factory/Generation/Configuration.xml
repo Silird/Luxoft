@@ -5,23 +5,10 @@
     <bean id="configuration" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationConfiguration">
         <property name="tables">
             <list value-type="java.lang.String">
-                <value>User1</value>    <!-- Пользователи -->
-            </list>
-        </property>
-        <property name="tablesTestByPass">
-            <list value-type="java.lang.String">
-                <value>BankAccount</value>
-                <value>Barcode</value>
-                <value>Contract</value>
-                <value>KagentGroup</value>
-                <value>Organization</value>
-                <value>PostFirm</value>
-                <value>PostStock</value>
-                <value>ProductGroup</value>
-                <value>UnitsConversion</value>
-                <value>DiscountCardGroup</value>
-                <value>Status</value>
-                <value>StatusCash</value>
+                <value>User1</value>
+                <value>Profile</value>
+                <value>PrivateMessage</value>
+                <value>PublicMessage</value>
             </list>
         </property>
     </bean>

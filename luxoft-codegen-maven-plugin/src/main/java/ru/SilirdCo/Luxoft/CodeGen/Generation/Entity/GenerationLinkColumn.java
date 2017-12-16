@@ -1,7 +1,7 @@
 package ru.SilirdCo.Luxoft.CodeGen.Generation.Entity;
 
 public class GenerationLinkColumn extends GenerationColumn {
-    private String fetch;
+    private String fetch = "LAZY";
 
     private boolean needed = false;
 

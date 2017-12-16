@@ -3,6 +3,14 @@
 
     <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
+            <Pattern>%d{HH:mm:ss} %-5level %logger{36} - %msg %n</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- Send debug messages to a file at "Logs\logIQShop.log" -->
+    <appender name="fileAppender" class="ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Util.Logs.DateFileAppender">                                                                                                                                                                                                     <!--pidrila-->
+        <file>Logs\logSocialNetwork.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg %n</Pattern>
         </encoder>
     </appender>
@@ -10,11 +18,13 @@
 
     <logger name="ru.SilirdCo.Luxoft" level="INFO" additivity="false">
         <appender-ref ref="consoleAppender" />
+        <appender-ref ref="fileAppender" />
     </logger>
 
     <root>
         <level value="INFO" />
         <appender-ref ref="consoleAppender" />
+        <appender-ref ref="fileAppender" />
     </root>
 
 </configuration>

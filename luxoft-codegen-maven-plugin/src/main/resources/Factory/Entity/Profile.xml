@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="table" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationMapping">
+        <property name="tableName" value="profile"/>
+        <property name="mainName">
+            <ref bean="column1"/>
+        </property>
+        <property name="idColumn" >
+            <ref bean="idColumn" />
+        </property>
+        <property name="columns">
+            <ref bean="columns" />
+        </property>
+        <property name="linkColumns">
+            <ref bean="linkColumns" />
+        </property>
+    </bean>
+
+    <bean id="idColumn" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="id"/>
+        <property name="type" value="Integer"/>
+    </bean>
+
+    <bean id="column1" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="name"/>
+        <property name="type" value="String"/>
+    </bean>
+
+    <bean id="column2" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="last_name"/>
+        <property name="type" value="String"/>
+    </bean>
+
+    <bean id="column3" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="birth_day"/>
+        <property name="type" value="Date"/>
+    </bean>
+
+    <bean id="column4" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="country"/>
+        <property name="type" value="String"/>
+    </bean>
+
+    <bean id="linkColumn1" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationLinkColumn">
+        <property name="name" value="parent"/>
+        <property name="type" value="User1"/>
+    </bean>
+
+    <bean id="columns" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="column1" />
+                <ref bean="column2" />
+                <ref bean="column3" />
+                <ref bean="column4" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="linkColumns" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="linkColumn1" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

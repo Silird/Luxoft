@@ -44,7 +44,7 @@ public class DataBaseConfigurationFactory {
                             "       xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n" +
                             "       xsi:schemaLocation=\"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd\">\n" +
                             "\n" +
-                            "    <bean id=\"dataBaseConfiguration\" class=\"ru.iqtech.IQShop.Server.core.impl.Util.Configuration.DataBaseConfiguration\" scope=\"prototype\">\n" +
+                            "    <bean id=\"dataBaseConfiguration\" class=\"ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Util.Configuration.DataBaseConfiguration\" scope=\"prototype\">\n" +
                             "        <property name=\"url\" value=\"jdbc:postgresql://host:port/table\"/>\n" +
                             "        <property name=\"user\" value=\"\"/>\n" +
                             "        <property name=\"password\" value=\"\"/>\n" +

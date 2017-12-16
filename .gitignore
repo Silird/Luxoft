@@ -36,6 +36,12 @@ target/
 #protocol
 protocol.log
 
+#Logs
+/Logs/
+
+#cong
+/Configuration/
+
 luxoft-codegen-maven-plugin/src/main/resources/Factory/Entity/Dictonary/
 
 #LuxoftSocialNetwork/src/main/java/ru/SilirdCo/Luxoft/SocialNetwork/core/impl/Attributes/Generated/
