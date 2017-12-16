@@ -2,7 +2,6 @@ ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\Generated\PublicMessageDAO.cla
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Message.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Events\Sender.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\CommandService.class
-ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Receiver.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Generated\PrivateMessage.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\Generated\User1Attribute.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\Generated\PublicMessageAttribute.class
@@ -10,10 +9,10 @@ ru\SilirdCo\Luxoft\SocialNetwork\core\interfaces\Services\IService.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\LaunchCore.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\Generated\PrivateMessageDAO.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Structure.class
-ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\CreateNewUserCommand.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Services\impl\PrivateMessageService.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Configuration\DataBaseConfigurationFactory.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Network.class
+ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Receivers\User1Receiver.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\impl\LaunchView.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\Generated\User1DAO.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\ElementAttributeTwo.class
@@ -29,6 +28,7 @@ ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Configuration\DataBaseConfigurat
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\Generated\ProfileDAO.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\BaseDAO.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Generated\Profile.class
+ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\CommonCommands\HelpCommand.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Services\impl\User1Service.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Services\BaseService.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\interfaces\Commands\ICommand.class
@@ -40,12 +40,14 @@ ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\ExceptionHandler.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\ElementAttribute.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\VarUtils.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\UserInfo.class
+ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\User1Commands\CreateNewUserCommand.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\BaseEntity.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\interfaces\Entities\IEntity.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Util\Factories\SenderFactory.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Generated\PublicMessage.class
-ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Invoker.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\Generated\PrivateMessageAttribute.class
+ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\CommandInvoker.class
+ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\User1Commands\ShowUsersCommand.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Frames\MainFrameController.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Logs\DateFileAppender.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Frames\MainJavaFX.class
@@ -56,4 +58,6 @@ ru\SilirdCo\Luxoft\SocialNetwork\core\interfaces\DAO\IDAO.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Factories\DAO\DAOFactory.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\PersistenceUtil.class
 ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Events\EventSender.class
+ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\BaseCommand.class
 ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\ElementAttributeOne.class
+ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Receivers\CommonReceiver.class

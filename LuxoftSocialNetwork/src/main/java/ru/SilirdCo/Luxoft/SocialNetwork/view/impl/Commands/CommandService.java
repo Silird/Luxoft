@@ -1,42 +1,32 @@
 package ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands;
 
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.CreateNewUserCommand;
-import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Entities.Network;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Events.Event;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Events.EventSender;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Events.EventType;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Util.Factories.SenderFactory;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.interfaces.Commands.ICommand;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.CommonCommands.HelpCommand;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.User1Commands.CreateNewUserCommand;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.User1Commands.ShowUsersCommand;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Receivers.CommonReceiver;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Receivers.User1Receiver;
 
 public class CommandService {
-    public CommandService() {
-        Receiver receiver = new Receiver(new Network());
-        ICommand createNewUserCommand = new CreateNewUserCommand(receiver);
+    private static CommandInvoker invoker = null;
 
-        Invoker invoker = new Invoker();
+    private static CommonReceiver commonReceiver = new CommonReceiver();
+    private static User1Receiver user1Receiver = new User1Receiver();
 
-        SenderFactory.getInstance()
-                .getEvents()
-                .getObservable()
-                .filter(event -> event.getType() == EventType.COMMAND)
-                .subscribe(event -> {
-                    String text = event.getText().replaceAll("[\\s]{2,}", " ");
-                    String[] strings = text.split(" ");
-                    String command = strings[0];
-                    int argsNumber = strings.length - 1;
-                    String[] args = new String[argsNumber];
-                    System.arraycopy(strings, 1, args, 0, argsNumber);
+    public static void start() {
+        if (invoker != null) {
+            stop();
+        }
 
-                    switch (command) {
-                        case "0":
-                        case "createUser":
-                            invoker.setCommand(createNewUserCommand);
-                            invoker.run();
-                            break;
-                        default:
-                            EventSender.sendMessage("Неизвестная команда");
-                            //throw new IllegalArgumentException("");
-                    }
-                });
+        invoker = new CommandInvoker(new HelpCommand(commonReceiver),
+
+                new CreateNewUserCommand(commonReceiver, user1Receiver),
+                new ShowUsersCommand(commonReceiver, user1Receiver));
+        invoker.start();
+    }
+
+    public static void stop() {
+        if (invoker != null) {
+            invoker.stop();
+        }
     }
 }

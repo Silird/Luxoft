@@ -3,6 +3,7 @@ package ru.SilirdCo.Luxoft.SocialNetwork.view.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Util.ExceptionHandler;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.CommandInvoker;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.CommandService;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Frames.MainJavaFX;
 
@@ -14,7 +15,7 @@ public class LaunchView {
 
         try {
             logger.info("\n\nИнициализация сервиса команд..\n\n");
-            new CommandService();
+            CommandService.start();
 
             logger.info("\n\nЗапуск формы..\n\n");
             MainJavaFX.show(new String[0]);

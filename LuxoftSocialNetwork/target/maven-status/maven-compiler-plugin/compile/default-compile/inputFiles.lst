@@ -2,7 +2,6 @@ D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\Socia
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\Generated\PublicMessageAttribute.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Factories\Services\Generated\ServiceFactoryGenerated.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Structure.java
-D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Receiver.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Configuration\DataBaseConfiguration.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\PersistenceUtil.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\interfaces\Messages\ISender.java
@@ -10,9 +9,9 @@ D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\Main.
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Frames\MainJavaFX.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Services\impl\PublicMessageService.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\AttributeType.java
+D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Receivers\User1Receiver.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Services\impl\PrivateMessageService.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\User.java
-D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Invoker.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Frames\MainFrameController.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Factories\DAO\Generated\DAOFactoryGenerated.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Network.java
@@ -20,10 +19,12 @@ D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\Socia
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Generated\Profile.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Util\Factories\SenderFactory.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\Generated\User1Attribute.java
+D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\CommandInvoker.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\Generated\PrivateMessageAttribute.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\CommandService.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\ElementAttributeTwo.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Logs\DateFileAppender.java
+D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\User1Commands\CreateNewUserCommand.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Generated\PrivateMessage.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\LaunchView.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Events\Event.java
@@ -34,13 +35,15 @@ D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\Socia
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Events\EventType.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\ElementAttribute.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\Generated\ProfileAttribute.java
+D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\BaseCommand.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\ElementAttributeOne.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\BaseDAO.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Services\impl\ProfileService.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\interfaces\Commands\ICommand.java
-D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\CreateNewUserCommand.java
+D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\User1Commands\ShowUsersCommand.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Services\impl\User1Service.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\Generated\PublicMessageDAO.java
+D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Receivers\CommonReceiver.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Util\Factories\Services\ServiceFactory.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\interfaces\Entities\IEntity.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Entities\Message.java
@@ -57,3 +60,4 @@ D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\Socia
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\DAO\DB\Generated\PrivateMessageDAO.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Events\Sender.java
 D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\core\impl\Attributes\ElementAttributeList.java
+D:\Univer\Java\Luxoft\LuxoftSocialNetwork\src\main\java\ru\SilirdCo\Luxoft\SocialNetwork\view\impl\Commands\Commands\CommonCommands\HelpCommand.java

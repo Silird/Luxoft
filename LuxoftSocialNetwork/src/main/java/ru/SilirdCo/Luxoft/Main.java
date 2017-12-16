@@ -3,8 +3,6 @@ package ru.SilirdCo.Luxoft;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.LaunchCore;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.CommandService;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Frames.MainJavaFX;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.LaunchView;
 
 public class Main {

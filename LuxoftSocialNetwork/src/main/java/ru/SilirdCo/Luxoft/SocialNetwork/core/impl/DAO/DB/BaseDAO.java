@@ -38,7 +38,7 @@ public abstract class BaseDAO<Data extends BaseEntity> implements IDAO<Data> {
      */
     public BaseDAO(final Class<Data> genericClass, final Supplier<Data> emptyDataSupplier) {
         this.emptyDataSupplier = emptyDataSupplier;
-        //innerEntity = ConstructorUtils.invokeConstructor(genericClass);
+        this.genericClass = genericClass;
     }
 
 
