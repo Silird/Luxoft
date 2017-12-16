@@ -28,10 +28,18 @@
 .idea/
 
 #maven
-/target
+target/
 
 #JavaDoc
 /JavaDoc
 
 #protocol
 protocol.log
+
+luxoft-codegen-maven-plugin/src/main/resources/Factory/Entity/Dictonary/
+
+#LuxoftSocialNetwork/src/main/java/ru/SilirdCo/Luxoft/SocialNetwork/core/impl/Attributes/Generated/
+#LuxoftSocialNetwork/src/main/java/ru/SilirdCo/Luxoft/SocialNetwork/core/impl/Entities/Generated/
+#LuxoftSocialNetwork/src/main/java/ru/SilirdCo/Luxoft/SocialNetwork/core/impl/DAO/DB/Generated/
+#LuxoftSocialNetwork/src/main/java/ru/SilirdCo/Luxoft/SocialNetwork/core/impl/Util/
+Generated/

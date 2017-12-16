@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="configuration" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationConfiguration">
+        <property name="tables">
+            <list value-type="java.lang.String">
+                <value>User1</value>    <!-- Пользователи -->
+            </list>
+        </property>
+        <property name="tablesTestByPass">
+            <list value-type="java.lang.String">
+                <value>BankAccount</value>
+                <value>Barcode</value>
+                <value>Contract</value>
+                <value>KagentGroup</value>
+                <value>Organization</value>
+                <value>PostFirm</value>
+                <value>PostStock</value>
+                <value>ProductGroup</value>
+                <value>UnitsConversion</value>
+                <value>DiscountCardGroup</value>
+                <value>Status</value>
+                <value>StatusCash</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

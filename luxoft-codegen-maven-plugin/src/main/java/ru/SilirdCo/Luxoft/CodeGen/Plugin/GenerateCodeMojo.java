@@ -8,6 +8,8 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Main.MainCodeGen;
+import ru.SilirdCo.Luxoft.CodeGen.Generation.Util.GenerationUtils;
 
 import java.io.File;
 
@@ -67,42 +69,8 @@ public class GenerateCodeMojo extends AbstractMojo {
             System.out.println("generation base path: " + directory);
             System.out.println("\n===========================\n\n");
 
-            /*
             GenerationUtils.baseDirectory = directory;
-
-            GenerationConfiguration configurationDictonary = SpringDictonaryFactory.getInstance().getConfiguration();
-            GenerationConfiguration configurationTestsForDictonaries = SpringDictonaryFactory.getInstance().getConfiguration();
-            GenerationDictonary generationDictonary = new GenerationDictonary(configurationDictonary);
-            GenerationTestsForDictonaries generationTestsForDictonaries = new GenerationTestsForDictonaries(configurationTestsForDictonaries);
-
-            GenerationConfiguration configurationDocuments = SpringDocumentsFactory.getInstance().getConfiguration();
-            GenerationConfiguration configurationConsignments = SpringConsignmentFactory.getInstance().getConfiguration();
-            GenerationDocuments generationDocuments = new GenerationDocuments(configurationDocuments);
-            GenerationConsignments generationConsignment = new GenerationConsignments(configurationConsignments);
-
-            GenerationOverall generationOverall = new GenerationOverall(configurationDictonary,
-                    configurationDocuments, configurationConsignments);
-
-            if (!generationDictonary.start()) {
-                System.exit(1);
-            }
-
-            if (!generationTestsForDictonaries.start()) {
-                System.exit(1);
-            }
-
-            if (!generationDocuments.start()) {
-                System.exit(1);
-            }
-
-            if (!generationConsignment.start()) {
-                System.exit(1);
-            }
-
-            if (!generationOverall.start()) {
-                System.exit(1);
-            }
-            */
+            MainCodeGen.main(null);
 
             logger.info("\n\nFinishing generation...");
         }

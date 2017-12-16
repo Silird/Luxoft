@@ -1,0 +1,42 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="table" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationMapping">
+        <property name="tableName" value="user1"/>
+        <property name="mainName">
+            <ref bean="column1"/>
+        </property>
+        <property name="idColumn" >
+            <ref bean="idColumn" />
+        </property>
+        <property name="columns">
+            <ref bean="columns" />
+        </property>
+    </bean>
+
+    <bean id="idColumn" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="id"/>
+        <property name="type" value="Integer"/>
+    </bean>
+
+    <bean id="column1" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="login"/>
+        <property name="type" value="String"/>
+    </bean>
+
+    <bean id="column2" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="password"/>
+        <property name="type" value="String"/>
+    </bean>
+
+    <bean id="columns" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="column1" />
+                <ref bean="column2" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

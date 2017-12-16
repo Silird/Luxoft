@@ -8,6 +8,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.SilirdCo.Luxoft.CodeGen.Clean.Util.ClearUtils;
 
 import java.io.File;
 
@@ -56,7 +57,7 @@ public class CleanGenerateCodeMojo extends AbstractMojo {
             System.out.println("clean generation base path: " + directory);
             System.out.println("\n===========================\n\n");
 
-            //ClearUtils.clearGenerated(directory);
+            ClearUtils.clearGenerated(directory);
 
             logger.info("\n\nКонец удаления сгенерированного кода...");
         }
