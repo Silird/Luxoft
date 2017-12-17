@@ -1,8 +1,7 @@
 package ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands;
 
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.CommonCommands.HelpCommand;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.User1Commands.CreateNewUserCommand;
-import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.User1Commands.ShowUsersCommand;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.User1Commands.*;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Receivers.CommonReceiver;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Receivers.User1Receiver;
 
@@ -19,8 +18,12 @@ public class CommandService {
 
         invoker = new CommandInvoker(new HelpCommand(commonReceiver),
 
-                new CreateNewUserCommand(commonReceiver, user1Receiver),
-                new ShowUsersCommand(commonReceiver, user1Receiver));
+                new RegisterCommand(commonReceiver, user1Receiver),
+                new ShowUsersCommand(commonReceiver, user1Receiver),
+                new LoginCommand(commonReceiver, user1Receiver),
+                new LogoutCommand(commonReceiver, user1Receiver),
+                new SelectCommand(commonReceiver, user1Receiver),
+                new LeaveCommand(commonReceiver, user1Receiver));
         invoker.start();
     }
 

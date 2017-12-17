@@ -14,4 +14,10 @@ public class EventSender {
                 .getEvents()
                 .send(new Event(EventType.COMMAND, text));
     }
+
+    public static void sendSelfMessage(String text) {
+        SenderFactory.getInstance()
+                .getEvents()
+                .send(new Event(EventType.SELF_MESSAGE, text));
+    }
 }

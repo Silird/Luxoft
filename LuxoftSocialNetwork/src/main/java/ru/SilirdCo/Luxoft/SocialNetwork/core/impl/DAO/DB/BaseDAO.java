@@ -1,5 +1,6 @@
 package ru.SilirdCo.Luxoft.SocialNetwork.core.impl.DAO.DB;
 
+import org.postgresql.util.PSQLException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Attributes.*;
@@ -7,6 +8,7 @@ import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Entities.BaseEntity;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Util.PersistenceUtil;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.interfaces.DAO.IDAO;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 import javax.persistence.criteria.*;
@@ -54,13 +56,21 @@ public abstract class BaseDAO<Data extends BaseEntity> implements IDAO<Data> {
         EntityManager session = null;
         try {
             session = PersistenceUtil.getSession();
-                session.getTransaction().begin();
+            session.getTransaction().begin();
 
             entity = session.merge(entity);
+            //session.flush();
 
             session.getTransaction().commit();
         }
         catch (Exception ex) {
+            if ((ex instanceof EntityExistsException)) {
+                if ((session != null) && session.getTransaction().isActive()) {
+                    session.getTransaction().rollback();
+                }
+                entity.setId(null);
+                return update(entity);
+            }
             persistenceException = PersistenceUtil.ExceptionHandler(ex);
             if ((session != null) && session.getTransaction().isActive()) {
                 session.getTransaction().rollback();
