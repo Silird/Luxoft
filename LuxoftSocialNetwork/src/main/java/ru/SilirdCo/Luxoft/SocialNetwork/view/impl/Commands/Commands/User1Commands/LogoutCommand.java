@@ -5,6 +5,7 @@ import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Util.Factories.Services.Servic
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.BaseCommand;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Receivers.CommonReceiver;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Receivers.User1Receiver;
+import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Util.StructureView;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.interfaces.Commands.ICommand;
 
 import java.util.List;
@@ -20,6 +21,11 @@ public class LogoutCommand extends BaseCommand implements ICommand {
 
     @Override
     public void execute(String[] args) {
+        if (StructureView.authUser.get() == null) {
+            commonReceiver.sendWarn("Для использования данной команды требуется авторизация (\"/login\")");
+            return;
+        }
+
         if (!check(args)) {
             commonReceiver.commandTemplate("");
             return;

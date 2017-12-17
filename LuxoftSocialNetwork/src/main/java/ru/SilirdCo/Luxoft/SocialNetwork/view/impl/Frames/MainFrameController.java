@@ -70,6 +70,7 @@ public class MainFrameController implements Initializable {
 
     private void initLog() {
         textFlow = new TextFlow();
+        textFlow.setStyle("-fx-background-color: #FFFFFF");
         logArea.getChildren().add(textFlow);
 
         logArea.heightProperty().addListener(((observable, oldValue, newValue) -> {
@@ -152,7 +153,8 @@ public class MainFrameController implements Initializable {
                                     .findByAttribute(attributes);
 
                             for (PrivateMessage message : messages) {
-                                EventSender.sendMessage(newValue.getLogin() + ": " + message.getMessage());
+                                EventSender.sendMessage(newValue.getLogin() + " [" +
+                                        StructureView.formatDateTime.format(message.getDate()) + "]: " + message.getMessage());
                                 message.setRead(true);
                                 ServiceFactory.getInstance()
                                         .getPrivateMessageService()

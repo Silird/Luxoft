@@ -42,9 +42,11 @@ public class User1Receiver {
     }
 
     public void logout() {
-        StructureView.authUser.setValue(null);
+        if (StructureView.authUser.get() != null) {
+            StructureView.authUser.setValue(null);
+            EventSender.sendMessage("Вы вышли из сети");
+        }
         StructureView.targetUser.setValue(null);
-        EventSender.sendMessage("Вы вышли из сети");
     }
 
     public void selectTarget(User1 user1) {

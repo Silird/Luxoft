@@ -11,6 +11,8 @@ import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Util.StructureView;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.interfaces.Commands.ICommand;
 import rx.Subscription;
 
+import java.util.Date;
+
 public class CommandInvoker {
     private Subscription subscription = null;
 
@@ -23,10 +25,23 @@ public class CommandInvoker {
     private final ICommand selectCommand;
     private final ICommand leaveCommand;
 
+    private final ICommand historyCommand;
+    private final ICommand publishCommand;
+    private final ICommand historyPublishCommand;
+
+    private final ICommand infoCommand;
+    private final ICommand updateProfileCommand;
+
     public CommandInvoker(ICommand helpCommand,
+
                           ICommand registerCommand, ICommand showUsersCommand,
                           ICommand loginCommand, ICommand logoutCommand,
-                          ICommand selectCommand, ICommand leaveCommand) {
+                          ICommand selectCommand, ICommand leaveCommand,
+
+                          ICommand historyCommand,
+                          ICommand publishCommand, ICommand historyPublishCommand,
+
+                          ICommand infoCommand, ICommand updateProfileCommand) {
         this.helpCommand = helpCommand;
 
         this.registerCommand = registerCommand;
@@ -35,6 +50,13 @@ public class CommandInvoker {
         this.logoutCommand = logoutCommand;
         this.selectCommand = selectCommand;
         this.leaveCommand = leaveCommand;
+
+        this.historyCommand = historyCommand;
+        this.publishCommand = publishCommand;
+        this.historyPublishCommand = historyPublishCommand;
+
+        this.infoCommand = infoCommand;
+        this.updateProfileCommand = updateProfileCommand;
     }
 
     public void start() {
@@ -122,6 +144,56 @@ public class CommandInvoker {
                         case "/leave":
                             leaveCommand.execute(args);
                             break;
+                        case "20":
+                        case "history":
+                            if (StructureView.targetUser.get() != null) {
+                                message = true;
+                                break;
+                            }
+                        case "/20":
+                        case "/history":
+                            historyCommand.execute(args);
+                            break;
+                        case "21":
+                        case "publish":
+                            if (StructureView.targetUser.get() != null) {
+                                message = true;
+                                break;
+                            }
+                        case "/21":
+                        case "/publish":
+                            publishCommand.execute(args);
+                            break;
+                        case "22":
+                        case "historyPublish":
+                            if (StructureView.targetUser.get() != null) {
+                                message = true;
+                                break;
+                            }
+                        case "/22":
+                        case "/historyPublish":
+                            historyPublishCommand.execute(args);
+                            break;
+                        case "30":
+                        case "info":
+                            if (StructureView.targetUser.get() != null) {
+                                message = true;
+                                break;
+                            }
+                        case "/30":
+                        case "/info":
+                            infoCommand.execute(args);
+                            break;
+                        case "31":
+                        case "updateProfile":
+                            if (StructureView.targetUser.get() != null) {
+                                message = true;
+                                break;
+                            }
+                        case "/31":
+                        case "/updateProfile":
+                            updateProfileCommand.execute(args);
+                            break;
                         default:
                             if (StructureView.targetUser.get() != null) {
                                 message = true;
@@ -142,7 +214,10 @@ public class CommandInvoker {
                         else {
                             login = "[???]";
                         }
-                        EventSender.sendSelfMessage(login + ": " + event.getText());
+
+                        Date date = new Date();
+                        EventSender.sendSelfMessage(login + " [" +
+                                StructureView.formatDateTime.format(date) + "]: " + event.getText());
 
                         PrivateMessage newMessage = new PrivateMessage();
                         newMessage.setId(null);
@@ -150,6 +225,7 @@ public class CommandInvoker {
                         newMessage.setRead(false);
                         newMessage.setParent(auth);
                         newMessage.setTarget(target);
+                        newMessage.setDate(date);
 
                         ServiceFactory.getInstance()
                                 .getPrivateMessageService()

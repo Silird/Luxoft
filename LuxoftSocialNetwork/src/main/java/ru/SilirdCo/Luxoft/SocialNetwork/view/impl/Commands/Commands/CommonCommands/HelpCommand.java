@@ -37,7 +37,12 @@ public class HelpCommand extends BaseCommand implements ICommand {
                 "/login [12]\n" +
                 "/logout [13]\n" +
                 "/select [14]\n" +
-                "/leave [15]\n";
+                "/leave [15]\n" +
+                "/history [20]\n" +
+                "/publish [21]\n" +
+                "/historyPublish [22]\n" +
+                "/info [30]\n" +
+                "/updateProfile [31]\n";
 
         commonReceiver.sendMessage(result);
     }

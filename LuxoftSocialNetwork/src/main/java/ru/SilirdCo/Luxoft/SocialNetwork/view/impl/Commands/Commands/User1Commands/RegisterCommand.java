@@ -3,6 +3,7 @@ package ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.User1Comman
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Attributes.AttributeType;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Attributes.ElementAttribute;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Attributes.Generated.User1Attribute;
+import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Entities.Generated.Profile;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Entities.Generated.User1;
 import ru.SilirdCo.Luxoft.SocialNetwork.core.impl.Util.Factories.Services.ServiceFactory;
 import ru.SilirdCo.Luxoft.SocialNetwork.view.impl.Commands.Commands.BaseCommand;
@@ -62,6 +63,18 @@ public class RegisterCommand extends BaseCommand implements ICommand {
             user1 = ServiceFactory.getInstance()
                     .getUser1Service()
                     .save(user1);
+
+            Profile profile = new Profile();
+            profile.setId(null);
+            profile.setName(null);
+            profile.setLastName(null);
+            profile.setBirthDay(null);
+            profile.setCountry(null);
+            profile.setParent(user1);
+
+            ServiceFactory.getInstance()
+                    .getProfileService()
+                    .save(profile);
 
             user1Receiver.createdUser(user1);
         }

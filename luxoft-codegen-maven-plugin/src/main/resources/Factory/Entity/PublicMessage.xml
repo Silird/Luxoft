@@ -28,6 +28,11 @@
         <property name="type" value="String"/>
     </bean>
 
+    <bean id="column2" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationColumn">
+        <property name="name" value="date"/>
+        <property name="type" value="Date"/>
+    </bean>
+
     <bean id="linkColumn1" class="ru.SilirdCo.Luxoft.CodeGen.Generation.Entity.GenerationLinkColumn">
         <property name="name" value="parent"/>
         <property name="type" value="User1"/>
@@ -37,6 +42,7 @@
         <constructor-arg>
             <list>
                 <ref bean="column1" />
+                <ref bean="column2" />
             </list>
         </constructor-arg>
     </bean>
