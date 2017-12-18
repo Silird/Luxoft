@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Luxoft">
+
+    <test name="LuxoftInit">
+        <classes>
+            <class name="ru.SilirdCo.Luxoft.Tests.Configuration.TestConfiguration"/>
+        </classes>
+    </test>
+
+    <test name="LuxoftServices">
+        <packages>
+            <package name="ru.SilirdCo.Luxoft.Tests.Services"/>
+        </packages>
+        <classes>
+            <class name="ru.SilirdCo.Luxoft.Tests.Configuration.TestServicesConfiguration"/>
+        </classes>
+    </test>
+
+    </suite>

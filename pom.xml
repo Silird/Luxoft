@@ -159,6 +159,13 @@
                 <artifactId>luxoft-codegen-maven-plugin</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>6.10</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

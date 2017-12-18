@@ -70,7 +70,7 @@ public class MainFrameController implements Initializable {
 
     private void initLog() {
         textFlow = new TextFlow();
-        textFlow.setStyle("-fx-background-color: #FFFFFF");
+        logArea.setStyle("-fx-background-color: #FFFFFF");
         logArea.getChildren().add(textFlow);
 
         logArea.heightProperty().addListener(((observable, oldValue, newValue) -> {
