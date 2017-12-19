@@ -20,6 +20,7 @@
     <modules>
         <module>luxoft-codegen-maven-plugin</module>
         <module>LuxoftSocialNetWork</module>
+        <module>LuxoftWeb</module>
     </modules>
 
     <dependencyManagement>
@@ -28,7 +29,7 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>4.3.2.RELEASE</version>
+                <version>4.2.0.RELEASE</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-logging</groupId>
@@ -111,6 +112,7 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
                 <version>5.2.2.Final</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- connection pool для работы с бд -->
@@ -118,6 +120,7 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-c3p0</artifactId>
                 <version>5.2.2.Final</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -165,6 +168,46 @@
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>6.10</version>
+            </dependency>
+
+
+            <!-- Spring MVC support -->
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>4.2.0.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>4.2.0.RELEASE</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>4.2.0.RELEASE</version>
+            </dependency>
+
+
+            <!-- Tag libs support for view layer -->
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>taglibs</groupId>
+                <artifactId>standard</artifactId>
+                <version>1.1.2</version>
+                <scope>runtime</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

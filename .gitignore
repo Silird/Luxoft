@@ -38,6 +38,7 @@ protocol.log
 
 #Logs
 /Logs/
+/LuxoftSocialNetwork/Logs/
 
 #cong
 /Configuration/
